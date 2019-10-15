@@ -1,0 +1,15 @@
+.home-content,
+.home-channel {
+  position: relative;
+  height: calc(100vh - 56px);
+}
+.home-channel {
+  padding-top: 15px;
+}
+.home-button-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  text-align: center;
+}
