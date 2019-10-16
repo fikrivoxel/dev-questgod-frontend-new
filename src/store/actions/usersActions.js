@@ -9,6 +9,7 @@ export const SET_LIST_USERS = 'SET_LIST_USERS'
 export const REMOVE_LIST_USERS = 'REMOVE_LIST_USERS'
 export const SET_TOKEN_DATA_USERS = 'SET_TOKEN_DATA_USERS'
 export const REMOVE_TOKEN_DATA_USERS = 'REMOVE_TOKEN_DATA_USERS'
+export const SET_DATA_INFLUENCER_USERS = 'SET_DATA_INFLUENCER_USERS'
 
 export const setTokenUsers = function (payload) {
   return {
@@ -52,6 +53,12 @@ export const setTokenDataUsers = function (payload) {
 export const removeTokenDataUsers = function () {
   return {
     type: REMOVE_TOKEN_DATA_USERS
+  }
+}
+export const setDataInfluencer = function (paylod) {
+  return {
+    type: SET_DATA_INFLUENCER_USERS,
+    paylod
   }
 }
 

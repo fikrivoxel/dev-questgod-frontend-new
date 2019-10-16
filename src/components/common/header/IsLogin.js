@@ -13,6 +13,13 @@ import {pick} from 'lodash'
 import {removeStorage} from 'store/actions/usersActions'
 
 class IsLogin extends Component {
+  get createChannel() {
+    return !this.props.users.data.influencer && (
+      <Link to='/create-channel' className='nav-link'>
+        Create Channel
+      </Link>
+    )
+  }
   constructor(props) {
     super(props)
     this.handleLogout = this.handleLogout.bind(this)
@@ -24,9 +31,7 @@ class IsLogin extends Component {
     return (
       <Nav className='ml-auto' navbar>
         <NavItem>
-          <Link to='/create-channel' className='nav-link'>
-            Create Channel
-          </Link>
+          {this.createChannel}
         </NavItem>
         <UncontrolledDropdown nav inNavbar>
           <DropdownToggle nav caret>

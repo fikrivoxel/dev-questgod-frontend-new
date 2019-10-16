@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
-import {compose} from 'redux'
+import {compose, bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {setDataInfluencer} from 'store/actions/usersActions'
+import Channels from 'api/Channels'
 
 class Form extends Component {
   get channelName() {
@@ -12,6 +14,16 @@ class Form extends Component {
   }
   async handleSubmitCreate(e) {
     e.preventDefault()
+    try {
+      await Channels.createChannel(
+        this.props.users.token,
+        this.channelName,
+        this.props.users.data.userName
+      )
+      this.props.setDataInfluencer(true)
+    } catch (err) {
+      console.log(err)
+    }
   }
   render() {
     return (
@@ -44,7 +56,10 @@ const mapStateToProps = function (state) {
     users: state.usersReducers
   }
 }
+const mapDispatchToProps = function (dispatch) {
+  return bindActionCreators({setDataInfluencer}, dispatch)
+}
 
 export default compose(
-  connect(mapStateToProps)
+  connect(mapStateToProps, mapDispatchToProps)
 )(Form)

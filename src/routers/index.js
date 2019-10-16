@@ -14,7 +14,7 @@ class Routers extends Component {
   }
   auth = {
     is: ['/create-channel'],
-    isnt: ['/registration']
+    isnt: ['/registration', '/invitation']
   }
   get layout() {
     let {location} = this.props

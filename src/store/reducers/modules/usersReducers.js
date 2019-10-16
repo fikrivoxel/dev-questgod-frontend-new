@@ -7,7 +7,8 @@ import {
   SET_LIST_USERS,
   REMOVE_LIST_USERS,
   SET_TOKEN_DATA_USERS,
-  REMOVE_TOKEN_DATA_USERS
+  REMOVE_TOKEN_DATA_USERS,
+  SET_DATA_INFLUENCER_USERS
 } from 'store/actions/usersActions'
 
 const initState = {
@@ -72,6 +73,15 @@ const removeTokenDataUsers = function (state) {
     all: []
   }
 }
+const setDataInfluencer = function (state, payload) {
+  return {
+    ...state,
+    data: {
+      ...state.data,
+      influencer: payload
+    }
+  }
+}
 
 export default function usersReducers(state = initState, action) {
   let {payload} = action
@@ -92,6 +102,8 @@ export default function usersReducers(state = initState, action) {
       return setTokenDataUsers(state, payload)
     case REMOVE_TOKEN_DATA_USERS:
       return removeTokenDataUsers(state)
+    case SET_DATA_INFLUENCER_USERS:
+      return setDataInfluencer(state, payload)
     default:
       return state
   }
