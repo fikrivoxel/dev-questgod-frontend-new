@@ -56,7 +56,7 @@ class Channel extends Component {
     return (
       <div className='channel container-fluid'>
         <Info channels={this.props.channels}/>
-        <Tabs streams={this.props.streams} products={this.props.products} channels={this.props.channels} />
+        <Tabs streams={this.props.streams} products={this.props.products} channels={this.props.channels} username={this.props.match.params.channelUsername} />
       </div>
     )
   }

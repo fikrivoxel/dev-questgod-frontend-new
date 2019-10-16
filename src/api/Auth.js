@@ -13,5 +13,20 @@ export default {
     } catch (err) {
       return Promise.reject(err)
     }
+  },
+  async usersSpentPoint(product, stream, token) {
+    try {
+      let {data} = await axios.put(`${API_BASE_URL}/restapi_0/users/spentpoint`, {
+        productId: product,
+        streamId: stream
+      }, {
+        headers: {
+          'Authorization': `bearer ${token}`
+        }
+      })
+      return data
+    } catch (err) {
+      return Promise.reject(err)
+    }
   }
 }

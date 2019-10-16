@@ -13,7 +13,7 @@ import ComingSoon from 'components/channel/tabs/ComingSoon'
 class Tabs extends Component {
   get isLive() {
     return this.props.streams.onLive ?
-      <Home products={this.props.products} channels={this.props.channels} /> : <NoLive />
+      <Home products={this.props.products} channels={this.props.channels} username={this.props.username} /> : <NoLive />
   }
   get tabsLinkMap() {
     return this.tabsLink.map((tab, idx) => {

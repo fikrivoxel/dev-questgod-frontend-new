@@ -1,0 +1,23 @@
+.channel-products {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.channel-products-list {
+  display: block;
+  width: 70px;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.channel-products-img {
+  width: 100%;
+}
