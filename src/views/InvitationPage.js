@@ -10,10 +10,15 @@ class InvitationPage extends Component {
   get invite() {
     return localStorage.getItem('invite')
   }
+  get isNew() {
+    return localStorage.getItem('isNew')
+  }
   get renderView() {
     if (!isEmpty(this.props.users.token)) {
       if (!isEmpty(this.invite))
-        return <Term invitekey={this.props.match.params.invitationKey} history={this.props.history} token={this.props.users.token}/>
+        if (!isEmpty(this.isNew) && this.isNew === 'true') {
+          return <Term invitekey={this.props.match.params.invitationKey} history={this.props.history} token={this.props.users.token}/>
+        }
     }
     return <Invite invitekey={this.props.match.params.invitationKey}/>
   }
