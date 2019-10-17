@@ -18,18 +18,24 @@ class IsntLogin extends Component {
   }
   render() {
     return (
-      <Nav className='ml-auto' navbar>
-        <NavItem>
-          <NavLink href='#' onClick={this.handleLogin}>
-            Login
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <Link to='/registration' className='nav-link'>
-            Sign Up
-          </Link>
-        </NavItem>
-      </Nav>
+      // <Nav className='ml-auto' navbar>
+      //   <NavItem>
+      //     <NavLink href='#' onClick={this.handleLogin}>
+      //       Login
+      //     </NavLink>
+      //   </NavItem>
+      //   <NavItem>
+      //     <Link to='/registration' className='nav-link'>
+      //       Sign Up
+      //     </Link>
+      //   </NavItem>
+      // </Nav>
+
+      <div className="header-login font-tahoma">
+        <a href='#' className="btn btn-login" onClick={this.handleLogin}>LOGIN</a>
+        <Link to={'/registration'} className="btn btn-signup">SIGN UP</Link>
+        </div>
+
     )
   }
 }

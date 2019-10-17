@@ -1,0 +1,38 @@
+#create-channel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgb(47,66,80);
+    background: linear-gradient(29deg, rgba(47,66,80,1) 5%, rgba(55,56,48,1) 44%, rgba(150,89,53,1) 100%, rgba(123,98,64,1) 100%);
+    color: #FFFFFF;
+    .wrapper {
+        width: 40%;
+        height: auto;
+        top: 30%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .2);
+        border-radius: 10px;
+        padding: 2vw 5vw;
+        input[type=text] {
+            border: none;
+            background: $input-bg-color;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .first-row {
+            text-align: right;
+        }
+
+        .second-row {
+            width: 100%;
+        }
+
+        input[type=submit] {
+            margin-top: 4vw auto;
+            display: block;
+        }
+    }
+}

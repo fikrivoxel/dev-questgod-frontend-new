@@ -1,0 +1,86 @@
+$font-secondary-color : #4C4C4C;
+$font-primary-color : #FFFFFF;
+$bg-color: #0F0F11;
+$input-bg-color: #6D6D6D;
+$button-bg-color: #1E236C;
+
+@keyframes event-notification {
+    from { right: 0 }
+    to {
+        right: 50%
+    }
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('BebasNeue-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'QuestGod';
+    src: url('questgod.woff') format('woff');
+}
+
+.font-tahoma {
+    font-family: Tahoma, sans-serif;
+}
+
+.icon-flash:before {
+    font-family: 'QuestGod';
+    content: '\E809';
+    font-size: 4vh;
+}
+    
+
+.icon-bell:before {
+    font-family: 'QuestGod';
+    content: '\F0F3';
+    font-size: 4vh;
+}
+
+
+.icon-arrow-down:before {
+    font-family: 'QuestGod';
+    content: '\F103';
+}
+
+.icon-search:before {
+    font-family: 'QuestGod';
+    content: '\E800';
+}
+
+.icon-google:before {
+    font-family: 'QuestGod';
+    content: '\F1A0'
+}
+
+.twitch-img {
+    width: 30px;
+    // background: rgba(0, 0, 0, .4);
+    margin: 0 20px;
+}
+
+
+// @media (max-width:800px) {
+            
+//     .icon-flash:before {
+//         position: absolute;
+//         display: none;
+//         background-color: #333;
+//         height: 0px;
+//         transition: all 0.3s ease-in;
+//         overflow-y: hidden;
+//         top: 50px;
+//         left: 0px;
+//         }   
+//     .icon-bell:before {
+//         position: absolute;
+//         display: none;
+//         background-color: #333;
+//         height: 0px;
+//         transition: all 0.3s ease-in;
+//         overflow-y: hidden;
+//         top: 50px;
+//         left: 0px;
+//         }   
+// }

@@ -1,0 +1,96 @@
+#featured-channel {
+    background: #0F0F11;
+    color: #FFFFFF;
+    position: relative;
+    height: 100vh;
+    padding: 4vw;
+    // position: relative;
+
+    .heading {
+        display: block;
+        position: relative;
+        h3 {
+            font-size: 4em;
+        }
+        @media only screen and (max-width: 600px) {
+            h3{
+            font-size: 2em;
+            color: #FFFFFF;
+            margin-bottom: 0px;
+            }
+    }
+
+        form {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        
+        .search {
+            outline: none;
+            padding:8px 15px;
+            background: #303030;
+            border:none;
+            color: rgb(255, 255, 255);
+            font-family:"Comic Sans MS" !important;
+            font-weight:bold;
+            font-style: italic;
+        }
+
+        .button {
+            outline: none;            
+            position:relative;
+            padding:6px 15px;
+            left:-8px;
+            border:2px solid #202020;
+            background-color:#202020;
+            color:#fafafa;
+            font-family:"Impact" !important;
+            // text-transform: uppercase;
+            font-style: italic;
+        }
+        .button:hover  {
+            background-color:#303030;
+            color:#fafafa;
+        }
+                  
+        ::-webkit-input-placeholder { /* For WebKit browsers */
+            color:    #050505;
+            font-family:"Comic Sans MS" !important;
+            font-weight:bold;
+            text-transform: capitalize;
+        }
+        :-moz-placeholder { /* For Mozilla Firefox 4 to 18 */
+            color:    #050505;
+            font-family:"Comic Sans MS" !important;
+            font-weight:bold;
+        }
+        ::-moz-placeholder { /* For Mozilla Firefox 19+ */
+            color:    #050505;
+            font-family:"Comic Sans MS" !important;
+            font-weight:bold;
+        }
+        :-ms-input-placeholder { /* For Internet Explorer 10+ */
+            color:    #050505;
+            font-family:"Comic Sans MS" !important;
+            font-weight:bold;
+        }
+
+        /* clears the 'X' from Internet Explorer */
+        input.hide-clear[type=search]::-ms-clear,
+        input.hide-clear[type=search]::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0; 
+        }
+
+        /* clears the 'X' from Chrome */
+        input.search[type="search"]::-webkit-search-decoration,
+        input.search[type="search"]::-webkit-search-cancel-button,
+        input.search[type="search"]::-webkit-search-results-button,
+        input.search[type="search"]::-webkit-search-results-decoration {
+            display: none; 
+        }
+    }
+}
