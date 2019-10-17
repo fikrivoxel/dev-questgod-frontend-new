@@ -28,5 +28,13 @@ export default {
     } catch (err) {
       return Promise.reject(err)
     }
+  },
+  async checkToken(key) {
+    try {
+      await axios.get(`${API_BASE_URL}/restapi_0/influencers/hiddenlink/live/${key}`)
+      return Promise.resolve()
+    } catch (err) {
+      return Promise.reject(err)
+    }
   }
 }

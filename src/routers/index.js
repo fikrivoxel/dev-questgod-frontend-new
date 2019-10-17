@@ -14,7 +14,7 @@ class Routers extends Component {
   }
   auth = {
     is: ['/create-channel'],
-    isnt: ['/registration', '/invitation']
+    isnt: ['/registration']
   }
   get layout() {
     let {location} = this.props
@@ -84,9 +84,20 @@ class Routers extends Component {
     if (e.key === 'token' && !isEmpty(e.newValue)) {
       let token = e.newValue
       try {
-        await this.props.handleStorageSetTokenData(token)
+        return await this.props.handleStorageSetTokenData(token)
       } catch (err) {
-        console.log(err)
+        return console.log(err)
+      }
+    }
+    if (e.key === 'invite' && !isEmpty(e.newValue)) {
+      let rgx = new RegExp("^(/invitation)", "i")
+      let check = location.pathname.search(rgx)
+      if (check !== -1) {
+        if (e.newValue === 'false') {
+          localStorage.removeItem('invite')
+          localStorage.removeItem('isNew')
+          return this.props.history.push('/')
+        }
       }
     }
   }
