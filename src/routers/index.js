@@ -10,7 +10,7 @@ import {handleStorageSetTokenData, checkStorage} from 'store/actions/usersAction
 class Routers extends Component {
   routes = routes
   state = {
-    isLoading: false
+    isLoading: true
   }
   auth = {
     is: ['/create-channel'],
@@ -92,12 +92,10 @@ class Routers extends Component {
     if (e.key === 'invite' && !isEmpty(e.newValue)) {
       let rgx = new RegExp("^(/invitation)", "i")
       let check = location.pathname.search(rgx)
-      if (check !== -1) {
-        if (e.newValue === 'false') {
-          localStorage.removeItem('invite')
-          localStorage.removeItem('isNew')
-          return this.props.history.push('/')
-        }
+      if (e.newValue === 'false' || e.newValue === 'undefined') {
+        localStorage.removeItem('invite')
+        localStorage.removeItem('isNew')
+        if (check !== -1) return this.props.history.push('/')
       }
     }
   }

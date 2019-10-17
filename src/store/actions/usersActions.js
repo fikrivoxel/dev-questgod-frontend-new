@@ -90,10 +90,11 @@ export const handleStorageSetTokenData = function (token) {
 export const checkStorage = function () {
   return async function (dispatch) {
     let token = localStorage.getItem('token')
-    if (isEmpty(token)) return
     try {
+      if (isEmpty(token)) return Promise.resolve()
       let data = await Auth.getUserInfo(token)
       dispatch(setTokenDataUsers({token, data}))
+      return Promise.resolve()
     } catch (err) {
       if (err.response) {
         let {response: {data: {message}}} = err

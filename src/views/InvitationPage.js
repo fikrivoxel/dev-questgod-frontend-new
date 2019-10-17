@@ -12,10 +12,10 @@ class InvitationPage extends Component {
   }
   get renderView() {
     if (!isEmpty(this.props.users.token)) {
-      if (!isEmpty(this.invite) && this.invite === 'true')
-        return <Term invitekey={this.props.match.params.invitationKey} />
+      if (!isEmpty(this.invite))
+        return <Term invitekey={this.props.match.params.invitationKey} history={this.props.history} token={this.props.users.token}/>
     }
-    return <Invite/>
+    return <Invite invitekey={this.props.match.params.invitationKey}/>
   }
   async componentDidMount() {
     this.checkLocalStorage()
@@ -28,7 +28,7 @@ class InvitationPage extends Component {
   }
   checkLocalStorage() {
     if (!isEmpty(this.props.users.token)) {
-      if (isEmpty(this.invite) || this.invite === 'false') return this.props.history.push('/')
+      if (isEmpty(this.invite)) return this.props.history.push('/')
     }
   }
   async checkValidationKey() {

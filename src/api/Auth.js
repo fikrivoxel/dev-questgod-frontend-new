@@ -36,5 +36,19 @@ export default {
     } catch (err) {
       return Promise.reject(err)
     }
+  },
+  async claimKey(key, token) {
+    try {
+      await axios.get(`${API_BASE_URL}/restapi_0/alpha/claim/${key}`, {
+        headers: {
+          'Authorization' : `bearer ${token}`
+        }
+      })
+      localStorage.removeItem('isNew')
+      localStorage.removeItem('invite')
+      return Promise.resolve()
+    } catch (err) {
+      return Promise.reject(err)
+    }
   }
 }

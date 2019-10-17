@@ -19,7 +19,7 @@ class Authentication extends Component {
       let invite = queryParams.invite
       localStorage.setItem('token', token)
       if (isNew === 'true') localStorage.setItem('isNew', isNew)
-      if (invite === 'true') localStorage.setItem('invite', invite)
+      if (invite !== 'undefined' || invite !== 'false') localStorage.setItem('invite', invite)
     }
   }
   render() {
