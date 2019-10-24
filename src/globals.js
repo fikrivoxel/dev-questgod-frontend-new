@@ -1,5 +1,5 @@
 export const NODE_ENV = 'development'
-export const API_BASE_URL = 'https://api.questgod.com'
+export const API_BASE_URL = 'https://test2.voxel.software'
 export const TWITCH_AUTH = 'https://id.twitch.tv/oauth2/authorize?' +
   '&client_id=r0je60ik0m7j51kvv9rbljqwlmreo7' +
   '&redirect_uri=' +
