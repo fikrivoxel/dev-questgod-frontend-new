@@ -1,24 +1,26 @@
+@import "variables";
+
 // @import "fonts/fonts";
 @import "bootstrap/bootstrap";
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 // @import "components/components";
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+@import "header";
 @import "header-login";
-@import "navbar";
+@import "channel-list";
+@import "channel-tabs-home";
+@import "channel-tabs-info";
+@import "channel-tabs-tabs";
+@import "home-content";
+
 @import "icon";
 @import "featured-channel";
-@import "channel-view";
 
 @import "create-channel";
-@import "channel-info";
-@import "channel-home";
 @import "registration";
 @import "term-condition.scss";
-@import "featured-content";
 @import "user-registration";
 
-@import "test";
-@import "channel-view-test";

@@ -7,6 +7,11 @@ import {getLiveStreamsByChannels, removeDataStreams} from 'store/actions/streams
 import {getProductsByStream, removeListProducts} from 'store/actions/productsActions'
 import Info from 'components/channel/Info'
 import Tabs from 'components/channel/Tabs'
+import {
+  Container
+} from 'reactstrap';
+import Header from 'components/common/Header'
+
 
 class Channel extends Component {
   state = {
@@ -49,15 +54,20 @@ class Channel extends Component {
   }
   render() {
     if (this.state.isLoading) return (
-      <div className='channel container-fluid'>
+      <Container fluid className="p-0 m-0" style={{background: '#0F0F11'}}>
         Loading...
-      </div>
+      </Container>
     )
     return (
-      <div className='channel container-fluid'>
+      <Container fluid className="p-0 m-0" style={{background: '#0F0F11'}}>
+        <Header
+            primaryColor='rgba(0,0,0,.4)'
+            secondaryColor='rgba(0,0,0,.5)'
+            treeColor='#0F0F11'
+          />
         <Info channels={this.props.channels}/>
         <Tabs streams={this.props.streams} products={this.props.products} channels={this.props.channels} username={this.props.match.params.channelUsername} />
-      </div>
+      </Container>
     )
   }
 }

@@ -12,21 +12,20 @@ import IsLogin from 'components/common/header/IsLogin'
 import IsntLogin from 'components/common/header/IsntLogin'
 
 class Header extends Component {
-  components = {
-    IsLogin: <IsLogin />,
-    IsntLogin: <IsntLogin/>
-  }
+  // components = {
+  //   IsLogin: <IsLogin />,
+  //   IsntLogin: <IsntLogin/>
+  // }
   state = {
     isOpen: false
   }
   constructor(props) {
     super(props)
-    this.handleToggleOpen = this.handleToggleOpen.bind(this)
     this.handleScroll = this.handleScroll.bind(this);
+
+    this.handleToggleOpen = this.handleToggleOpen.bind(this)
   }
 
-
-  
   handleScroll() {
     if (window.scrollY < 50) {
       this.setState({bgColor: this.props.primaryColor})
@@ -60,7 +59,7 @@ class Header extends Component {
       //   </Collapse>
       // </Navbar>
 
-      <nav id="navbar" style={{background: this.state.bgColor}}>
+      <Navbar id="navbar" style={{background: this.state.bgColor}}>
         <div className="navbar-brand">
           <Link to={'/'}>
             <img src={'/images/quest-god-logo.png'}/>
@@ -72,9 +71,14 @@ class Header extends Component {
             <span className="icon-flash"></span>
           </Link>
           <span className="icon-bell"></span>
-          {this.props.users.isLogin ? this.components.IsLogin : this.components.IsntLogin}
+          {this.props.users.isLogin ? 
+            <IsLogin />
+            :
+            <IsntLogin />
+          }
+           {/* this.components.IsLogin : this.components.IsntLogin} */}
         </div>
-      </nav>
+      </Navbar>
     )
   }
 }

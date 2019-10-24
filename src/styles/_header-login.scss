@@ -4,6 +4,7 @@ $bg-color: #0F0F11;
 $input-bg-color: #6D6D6D;
 $button-bg-color: #1E236C;
 
+
 .header-login {
     position: relative;
     display: inline-block;
@@ -39,6 +40,96 @@ $button-bg-color: #1E236C;
         border-right: 0;
         margin-left: -18px;
         margin-top: -25px;
+    }
+
+     /* Twitch Sign Up */
+     .SignBtn {
+        //  top: -0.5em;
+        // box-sizing: border-box;
+        position: relative;
+        /* width: 13em;  - apply for fixed size */
+        // margin: auto;
+        background: #8000ff;
+        padding: 1em 0.5em 1em 2.8em;
+        // padding: 1em;
+        width: 100%;
+        max-width: 40%;
+        // height: auto;
+        // border: none;
+        text-align: center;
+        line-height: 1vh;
+        // white-space: nowrap;
+        border-radius: 5px;
+        // font-size: calc(12px + .5vw);
+        font-size: 1vw;
+        color: $font-primary-color;
+        // display: inline-block;
+    }
+    .SignBtn:before {
+        content: "";
+        // box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 20%;
+        height: 100%;
+    }
+    .SignBtn:focus {
+        outline: none;
+    }
+    .SignBtn:active {
+        box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+    }
+    
+    .SignBtn--twitch {
+        // background-color: #8000ff;
+        // background-image: linear-gradient(#8000ff, #8000ff);
+        /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+        // text-shadow: 0 -1px 0 #8000ff;
+    }
+    .SignBtn--twitch:before {
+        border-right: #5a02b3 1px solid;
+        // top: 1em;
+        background: url('/images/twitch-icon.png') 1.1vh 0.7vh no-repeat;
+        background-color: #5a02b3;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-size: 2.5vh;
+    }
+    .SignBtn--twitch:hover,
+    .SignBtn--twitch:focus {
+        // background-color: #8000ff;
+        background-image: linear-gradient(#8000ff, #8000ff);
+    } 
+    //
+    .img-login {
+        width: 100%;
+        right: 15em;
+        max-width: 20%;
+        height: auto;
+    }
+
+    .btn-login {
+        font-size: 2vh;
+        border: 1px solid white;
+    }
+
+    .btn-login:hover {
+        font-size: 2vh;
+        border:  1px solid transparent;
+        box-shadow: black;
+        color: black;
+        background: white;
+    }
+
+    .btn-signup {
+        font-size: 2vh;
+        color: white;
+    }
+    .btn-signup:hover{
+        font-size: 2vh !important;
+        color: black !important;
     }
 
         h2 {
@@ -180,4 +271,6 @@ $button-bg-color: #1E236C;
         //       width: 100%;
         //     }
         //   }
+
+        
 }

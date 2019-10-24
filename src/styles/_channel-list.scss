@@ -84,11 +84,12 @@
 
   @media only screen and (max-width: 600px) {
     .video-yt {
-      height: 230px;
-      width: 100%;
-      opacity: .7;
-      overflow: hidden;
-      transition: all 0.2s ease-in-out;
+    position: relative;
+    width: 100%; 
+    height: auto;
+    opacity: 0.8;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
     }
 }
 
@@ -178,17 +179,6 @@
   .title-channel {
     position: absolute;
     right: 1em;
-    bottom: 5px;
-    color: rgb(214, 214, 214);
-    font-size: 0.8em;
-    font-family:"Comic Sans MS" !important;
-    font-style: italic;
-    background: #101010;
-  }
-
-  .title-mode {
-    position: absolute;
-    left: 8em;
     padding-right: 0.5em;
     padding-left: 0.5em;
     bottom: 5px;
@@ -200,9 +190,10 @@
     border-radius: 1em;
   }
 
-  .title-mode:hover {
+  .title-channel:hover {
+    cursor: pointer;
     position: absolute;
-    left: 8em;
+    right: 1em;
     padding-right: 0.5em;
     padding-left: 0.5em;
     bottom: 5px;
@@ -212,7 +203,6 @@
     font-style: italic;
     background: #505050;
     border-radius: 1em;
-    cursor: pointer;
   }
 
   .title-content {
@@ -233,6 +223,11 @@
     text-decoration: none !important;
     margin-bottom: 2em;
   }
+
+  a {
+    text-decoration: none !important;
+  }
+
   @media only screen and (max-width: 600px) {
     .title-content {
       margin-bottom: 10px;

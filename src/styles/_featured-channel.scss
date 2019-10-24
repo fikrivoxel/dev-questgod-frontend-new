@@ -28,6 +28,7 @@
 
         
         .search {
+            width: 70%;
             outline: none;
             padding:8px 15px;
             background: #303030;
@@ -53,6 +54,10 @@
         .button:hover  {
             background-color:#303030;
             color:#fafafa;
+        }
+
+        @media screen and (max-width: 1024px) {
+         
         }
                   
         ::-webkit-input-placeholder { /* For WebKit browsers */

@@ -10,10 +10,14 @@ import Home from 'components/channel/tabs/Home'
 import NoLive from 'components/channel/tabs/NoLive'
 import ComingSoon from 'components/channel/tabs/ComingSoon'
 
+import Product from './tabs/Product'
+import Achievement from './tabs/Achievement'
+import About from './tabs/About'
+
 class Tabs extends Component {
   get isLive() {
     return this.props.streams.onLive ?
-      <Home products={this.props.products} channels={this.props.channels} username={this.props.username} /> : <NoLive />
+      <Home products={this.props.products} channels={this.props.channels} username={this.props.username} streams={this.props.streams}/> : <NoLive />
   }
   get tabsLinkMap() {
     return this.tabsLink.map((tab, idx) => {
@@ -38,9 +42,9 @@ class Tabs extends Component {
   }
   tabsLink = [
     {tabname: 'Home', componentName: this.isLive},
-    {tabname: 'Product', componentName: <ComingSoon />},
-    {tabname: 'Achievement', componentName:  <ComingSoon />},
-    {tabname: 'About', componentName:  <ComingSoon />}
+    {tabname: 'Product', componentName: <Product />},
+    {tabname: 'Achievement', componentName:  <Achievement />},
+    {tabname: 'About', componentName:  <About />}
   ]
   state = {
     activeTab: 0
@@ -53,15 +57,15 @@ class Tabs extends Component {
   }
   render() {
     return (
-      <div className='row'>
-        <div className='col-12'>
-          <Nav tabs>
-            {this.tabsLinkMap}
-          </Nav>
-          <TabContent activeTab={this.state.activeTab}>
-            {this.tabsContent}
-          </TabContent>
-        </div>
+      <div >
+        <section id="channel-tabs">
+        <Nav tabs>
+          {this.tabsLinkMap}
+        </Nav>
+        <TabContent activeTab={this.state.activeTab}>
+          {this.tabsContent}
+        </TabContent>
+        </section>
       </div>
     )
   }
